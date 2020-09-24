@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The document was created using the following versions:
+Ruby 2.6.3p62
+Rails 5.2.4.1
 
-Things you may want to cover:
+The project contains a seed document that will need to rake db:seed command running in order for the website to function after mirations.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The database used was the standard sqlite 3.
