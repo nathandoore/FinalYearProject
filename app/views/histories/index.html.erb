@@ -1,0 +1,49 @@
+<div id="historiesContainer">
+    <p id="notice">
+        <%= notice %>
+    </p>
+    <%= link_to 'Back', :back, class: "backButtons" %>
+        <h1>Your previous hires</h1>
+
+        <table id="neww">
+            <thead>
+
+            </thead>
+
+            <tbody>
+                <tr>
+
+                    <td>
+                        <h4> Image </h4></td>
+                    <td>
+                        <h4> Make/Model</h4></td>
+                    <td>
+                        <h4> Date of hire</h4></td>
+                    <td></td>
+                </tr>
+                <% @history.each do |history| %>
+                    <% uid = history.user_id %>
+                        <% cid = history.car_id %>
+                            <% @user = User.find_by(id: uid) %>
+                                <% @car = Car.find_by(id: cid)%>
+                                    <% if @user == User.find(session[:user_id])%>
+
+                                        <tr>
+                                            <td>
+                                                <%= image_tag @car.img_url.url || 'm4.jpg', :size => "90x80" %>
+                                            </td>
+                                            <td>
+                                                <%= @car.manufacturer %>
+                                                    <%= @car.model %> |</td>
+                                            <td>
+                                                <%= history.date.strftime("%I:%M  |  %F") %> |</td>
+                                            <td>
+                                                <%= link_to 'View car', car_path(@car) %>
+                                            </td>
+                                        </tr>
+                                        <% end %>
+                                            <% end %>
+            </tbody>
+        </table>
+
+</div>

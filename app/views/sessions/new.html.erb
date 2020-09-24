@@ -1,0 +1,39 @@
+<div class="backContainer">
+
+    <h1>Log in</h1>
+
+    <div id="formContainer">
+        <div id="formTable">
+
+            <%= form_with(scope: :session, url: login_path, class: "shadow p-3 mb-3 bg-info rounded", local: true) do |f| %>
+                <div class="formTableRow">
+                    <div class="formTableCell">
+                        <h4><%= f.label :email%></h4>
+                    </div>
+                    <div class="formTableCell">
+                        <%= f.email_field :email, placeholder: "Enter your email address", :class => "formBox" %>
+                    </div>
+                </div>
+
+                <div class="formTableRow">
+                    <div class="formTableCell">
+                        <h4><%= f.label :password%></h4>
+                    </div>
+                    <div class="formTableCell">
+                        <%= f.password_field :password, placeholder: "Enter your password", :class => "formBox" %>
+                    </div>
+                </div>
+
+                <div class="formTableRow">
+                    <div class="formTableCell">
+                        <%= f.submit "Log in", class: "btn btn-outline-light btn-lg" %>
+                    </div>
+                    <% end %>
+                        <div class="formTableCell">
+                            <%= link_to 'Cancel', cars_path, class: "text-info" %>
+                        </div>
+                </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+
+
+<div id="historiesContainer">
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back', :back, class: "backButtons" %>
+<h1>Reviews </h1>
+
+
+<table>
+    <tr>
+    <th>User</th>
+    <th>Review text</th>
+    <th>No of stars</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    </tr>
+
+  <% @reviews.each do |review| %>
+    <tr>
+    <td><%= review.name %></td>
+    <td><%= review.review_text.truncate(35) %></td>
+    <!-- If statement for stars. Newvar = new variable -->
+        <% if review.no_of_stars == 1 %>
+          <% newvar = '*'%>
+          <% end %>
+        <% if review.no_of_stars == 2 %>
+          <% newvar = '**'%>
+          <% end %>
+        <% if review.no_of_stars == 3 %>
+          <% newvar = '***'%>
+          <% end %>
+        <% if review.no_of_stars == 4 %>
+          <% newvar = '****'%>
+          <% end %>
+        <% if review.no_of_stars == 5 %>
+          <% newvar = '*****'%>
+          <% end %>
+        <div class="stars"> 
+          <td><%= newvar %></td>
+        </div>
+        <div class='button'>
+    <td><%= link_to 'Show',
+        {controller: 'reviews', action: 'displays', id: review.car_id },{class: "button-to"} %></td></div>
+      <%# if admin? %>
+    <div class='button'>
+    <td><%= link_to 'Edit', edit_review_path(review) %></td></div>
+    <div class='button'>
+    <td><%= link_to 'Destroy', review, confirm: 'Are you sure?', method: :delete %></td></div>
+    </tr>
+  <%# end %>
+  <% end %>
+  </table>
+
+</div>
+
+

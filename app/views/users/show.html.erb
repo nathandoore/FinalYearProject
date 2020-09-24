@@ -1,0 +1,117 @@
+<div id="userBG">
+   <%= link_to 'Back', :back, class: "backButtons" %>
+   <div id="userContainer">
+      <h1> <%= @user.username %>'s Profile </h1>
+      <p id="notice">
+         <%= notice %>
+      </p>
+      <div id="userDetails">
+         <%= image_tag @user.img_url.url  || 'unknown.png', :size => "120x100" %>
+         <p>
+            <strong>Username:</strong>
+            <%= @user.username %>
+         </p>
+         <p>
+            <strong>Name:</strong>
+            <%= @user.firstname %>
+            <%= @user.lastname %>
+         </p>
+         <% user = User.find(session[:user_id])%>
+         <% if @user.id == user.id %>
+         <p>
+            <strong>Email:</strong>
+            <%= @user.email %>
+         </p>
+         <p>
+            <strong>Date of birth:</strong>
+            <%= @user.dob %>
+         </p>
+         <p>
+            <strong>Mobile number:</strong>
+            <%= @user.mobile %>
+         </p>
+      </div>
+      <p>
+         <strong>
+            <% @car = Car.all %>
+      <div class="Credit">
+      </div></strong></p>
+      <p>
+         <strong>
+            Number of previous listed hires: 
+            <% @Var = 0 %>
+            <% @car.each do |car| %>
+            <% if car.user_id == @user.id %>
+            <% @Var = @Var + car.rentcount %>
+            <% end %>
+            <% end %>
+      <div class="Credit"><%= @Var %>
+      </div></strong>
+      </p>
+      <p>
+         <strong>Number of vehicles rented by user: </strong>
+      <div class="Credit">
+         <%= @user.rentcount %>
+      </div>
+      </p>
+      <h2>
+         <% @Credit %>
+         <strong>
+            Total rating:  
+            <div class="Credit"><%= @Credit = @Var +  @user.rentcount%><%= image_tag 'Review.png', :size => "10x10" %></div>
+         </strong>
+      </h2>
+      <table id="userTable">
+         <tr>
+            <td>
+               <%= link_to 'Edit My Account', edit_user_path(@user), class: "userButtons1" %>
+            </td>
+            <td>
+               <%= link_to 'My Listed Cars', cars_users_path, class: "userButtons"  %>
+            </td>
+            <td>
+               <%= link_to 'My Hire cars', cars_rented_path(), class: "userButtons"  %>
+            </td>
+            <td>
+               <%= link_to 'Rentals History', histories_path, class: "userButtons"  %>
+            </td>
+            <td>
+               <%= link_to 'Listing History', cars_listing_path, class: "userButtons" %>
+            </td>
+         </tr>
+         <% else %>
+         <p>
+            <strong>
+               Number of vehicles listed by user:<% @car = Car.all %>
+               <% varr = @car.where(user_id: @user.id).count %> 
+         <div class="Credit"><%= varr %>
+         </div></strong></p>
+         <p>
+            <strong>
+               Number of previous listed hires: 
+               <% @Var = 0 %>
+               <% @car.each do |car| %>
+               <% if car.user_id == @user.id %>
+               <% @Var = @Var + car.rentcount %>
+               <% end %>
+               <% end %>
+         <div class="Credit"><%= @Var %>
+         </div></strong>
+         </p>
+         <p>
+            <strong>Number of vehicles rented by user: </strong>
+         <div class="Credit">
+            <%= @user.rentcount %>
+         </div>
+         </p>
+         <h2>
+            <% @Credit %>
+            <strong>
+               Total rating:  
+               <div class="Credit"><%= @Credit = @Var + varr + @user.rentcount%><%= image_tag 'Review.png', :size => "10x10" %></div>
+            </strong>
+         </h2>
+         <% end %>
+      </table>
+   </div>
+</div>

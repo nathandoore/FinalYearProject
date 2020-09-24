@@ -1,0 +1,74 @@
+<div id="indexContainer" %>
+   <div id="carIndexContainer">
+      <div id="headerHire">
+         <h2> Past Rentals </h2>
+      </div>
+      <% user = User.find(session[:user_id])%>
+      <% @car.each do |cars| %>
+      <% if cars.renter_id == session[:user_id] %>
+      <div class="vehicleIndexHire">
+         <table id="carIndexTable">
+            <tr>
+               <td rowspan="4">
+                  <%= image_tag cars.img_url || 'm4.jpg', :size => "270x210" %>
+               </td>
+               <td>
+                  <%= image_tag 'Car.png', :size => "50x50" %>
+               </td>
+               <td>
+                  <%= image_tag 'House.png', :size => "50x50" %>
+               </td>
+               <td>
+                  <%= image_tag 'Fuel.png', :size => "50x50" %>
+               </td>
+               <td>
+                  <%= image_tag 'Colour.png', :size => "50x50" %>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <p> <%= cars.manufacturer %> <%= cars.model %></p>
+               </td>
+               <td>
+                  <p><%= cars.postcode %> </p>
+               </td>
+               <td>
+                  <p><%= cars.fuel %> </p>
+               </td>
+               <td>
+                  <p><%= cars.colour %> </p>
+               </td>
+            </tr>
+            <tr>
+               <td> <%= image_tag 'Engine.png', :size => "50x50" %>
+               </td>
+               <td><%= image_tag 'Year.png', :size => "50x50" %>
+               </td>
+               <td><%= image_tag 'Price.png', :size => "50x50" %>
+               </td>
+               <td><%= image_tag 'Review.png', :size => "50x50" %>
+               </td>
+            </tr>
+            <tr>
+               <td>
+                  <p><%= cars.engine %> </p>
+               </td>
+               <td>
+                  <p><%= cars.year %> </p>
+               </td>
+               <td>
+                  <p>24hr Price: £<%= cars.price %></p>
+               </td>
+               <td>
+                  <p>Review: </p>
+               </td>
+            </tr>
+            <td>
+               <%= link_to 'Off Hire', controller: 'cars', action: 'offhire', id: cars.id, :class => 'bookButton' %>
+            </td>
+         </table>
+      </div>
+      <% end %>
+      <% end %>
+   </div>
+</div>

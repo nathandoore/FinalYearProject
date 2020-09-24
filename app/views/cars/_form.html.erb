@@ -1,0 +1,140 @@
+<div class="backContainer">
+   <%= link_to '< Back', cars_path, :class => 'backButtons' %>
+   <% if @car.errors.any? %>
+   <ul>
+      <% @car.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+      <% end %>
+   </ul>
+   <div id="formContainer">
+      <div id="formTable">
+         <%= form_for @car do |f| %>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :manufacturer %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_field :manufacturer, {:class => "formBox"}%>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :model %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_field :model, {:class => "formBox"} %>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :fuel %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.select :fuel, options_for_select([["Select One", ""], "Petrol", "Diesel"], {class: 'dropBox'} )%>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :colour %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_field :colour, {:class => "formBox"} %>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :engine %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_field :engine, {:class => "formBox"} %>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :description %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_area :description, {:class => "formBoxBig"} %>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :year %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_field :year, {:class => "formBox"} %>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :price %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_field :price, {:class => "formBox"} %>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :doors, "Amount of doors" %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.select :doors, options_for_select([["Select One", ""], 3, 5], {class: 'dropBox'} )%>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :transmission, "Transmission Type" %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.select :transmission, options_for_select([["Select One", ""], "Manual", "Automatic", "Semi-Auto"], {class: 'dropBox'} )%>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :passengers, "Passenger Capacity" %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.select :passengers, options_for_select([["Select One", ""], 1,2, 3, 4, 5, 6, 7, 8, 9], {class: 'dropBox'} )%>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :bootspace, "Boot size" %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.select :bootspace, options_for_select([["Select One", ""], "Small", "Medium", "Large"], {class: 'dropBox'} )%>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label "Full address of collection point" %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_area :pickup, {:class => "formBoxBig"} %>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label "Post code of collection point"%> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.text_field :postcode, {:class => "formBox"} %>
+            </div>
+         </div>
+         <div class="formTableRow">
+            <div class="formTableCell">
+               <h4><%= f.label :img_url, "Images" %> </h4>
+            </div>
+            <div class="formTableCell">
+               <%= f.file_field :img_url %>
+            </div>
+         </div>
+         <p>
+            <%= f.submit 'List my car', :class => 'formButton'%>
+         </p>
+      </div>
+      <% end %>
+   </div>
+</div>
+</div>

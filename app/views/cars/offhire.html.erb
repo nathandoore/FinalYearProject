@@ -1,0 +1,25 @@
+
+        <%= link_to 'Back', :back, class: "backButtons" %>
+<div id="formContainer">
+    <div id="formTable">
+<%# OFF HIRE CODING %>
+    <% 	var = @car.id %>
+        <% @user = User.find_by(renter_id: var) %>
+            <% @user.renter_id = 0 %>
+                <% 	 @car.renter_id = 1	%>
+                    <%     @car.save %>
+                        <%     @user.save %>
+
+                            <h1> Off Hire complete </h1>
+
+                            <% time = Time.now %>
+                                <% cartime = @car.hirestart %>
+
+                                    <h3> Vehicle hire from: </h3>
+                                    <%= @car.hirestart.strftime("%d/%m/%Y | %k:%M") %>
+                                        <h3> Until: </h3>
+                                        <%= time.strftime("%d/%m/%Y | %k:%M") %>
+
+                                    
+    </div>
+</div>

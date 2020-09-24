@@ -1,0 +1,126 @@
+<div id="indexContainer" %>
+
+    <div id="carIndexContainer">
+        <%= link_to 'Back', :back, class: "backButtons" %>
+            <div id="headerHire">
+                <h2> Non-active listings </h2>
+
+            </div>
+
+            <% user = User.find(session[:user_id])%>
+                <% @car.each do |cars| %>
+                    <% if cars.user_id == user.id %>
+                        <% if cars.status == "false" %>
+
+                            <div class="vehicleIndexHire">
+                                <table id="carIndexTable">
+                                    <tr>
+                                        <td rowspan="4">
+                                            <%= image_tag cars.img_url.url || 'm4.jpg', :size => "270x210" %>
+                                        </td>
+                                        <td>
+                                            <%= image_tag 'Car.png', :size => "50x50" %>
+                                        </td>
+
+                                        <td>
+                                            <%= image_tag 'House.png', :size => "50x50" %>
+                                        </td>
+                                        <td>
+                                            <%= image_tag 'Fuel.png', :size => "50x50" %>
+                                        </td>
+
+                                        <td>
+                                            <%= image_tag 'Colour.png', :size => "50x50" %>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <%= cars.manufacturer %>
+                                                    <%= cars.model %>
+                                            </p>
+                                        </td>
+
+                                        <td>
+                                            <p>
+                                                <%= cars.postcode %>
+                                            </p>
+                                        </td>
+
+                                        <td>
+                                            <p>
+                                                <%= cars.fuel %>
+                                            </p>
+                                        </td>
+
+                                        <td>
+                                            <p>
+                                                <%= cars.colour %>
+                                            </p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <%= image_tag 'Engine.png', :size => "50x50" %>
+                                        </td>
+
+                                        <td>
+                                            <%= image_tag 'Year.png', :size => "50x50" %>
+                                        </td>
+
+                                        <td>
+                                            <%= image_tag 'Price.png', :size => "50x50" %>
+                                        </td>
+
+                                        <td>
+                                            <%= image_tag 'Review.png', :size => "50x50" %>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>
+                                                <%= cars.engine %>
+                                            </p>
+                                        </td>
+
+                                        <td>
+                                            <p>
+                                                <%= cars.year %>
+                                            </p>
+                                        </td>
+
+                                        <td>
+                                            <p>24hr Price: £
+                                                <%= cars.price %>
+                                            </p>
+                                        </td>
+
+                                        <td>
+                                            <p>Review: </p>
+                                        </td>
+
+                                    </tr>
+                                    <td>
+                                        <%= link_to "Edit Vehicle", edit_car_path(cars) %> |
+                                            <%= link_to 'Relist', controller: 'cars', action: 'reactivate', id: cars.id, :class => 'bookButton' %>
+                                                <% @user = User.first %>
+                                                    <% if cars.renter_id != @user.id%>
+                                                        </br><b> On rent </b>
+                                                        <%= link_to 'Off Hire', controller: 'cars', action: 'offhire', id: cars.id, :class => 'bookButton' %>
+                                                            <% else %>
+                                                                </br><b> Available </b>
+                                                                <% end %>
+                                                                    <% end %>
+                                    </td>
+ <% end %>
+                                <% end %>
+                                </table>
+
+                            </div>
+                           
+
+    </div>
+</div>

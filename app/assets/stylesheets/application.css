@@ -1,0 +1,950 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+*= require bootstrap-datepicker
+ # Or if using bootstrap v3:
+ *= require bootstrap-datepicker3
+ *= require jquery-ui/datepicker
+ */
+
+
+body {
+/*	background-image: url('NEWBG.png');*/
+	background-repeat: no-repeat;
+  background-size: auto;
+  background-image: url("NEWBG.jpg");
+  margin-top: 100px;
+  background-color: #01C5B1;
+  padding: 0px;
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+.logo{
+  margin-top: 7px;
+  float: left;
+}
+
+#bodyContainer{
+  width: 100%;
+  height: 800px;
+}
+#topContainer{
+  width: 100%;
+  height: 550px;
+  background-color: ;
+}
+#bottomContainer{
+  padding-top: 20px;
+  background-color: ;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+}
+#bottomContainerAdd{
+  height: 2800px;
+  width: 100%;
+  text-align: center;
+  background-color: white;
+}
+.top{
+  padding: 30px;
+  font-size: 40px;
+}
+#bottomContainerTop{
+  width: 100%;
+  height: 100px;
+  font-family: sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+.vehicleIndexHome{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black 2px;
+  background-color: ;
+  text-align: center;
+  width: 20%;
+  height: 320px;
+  padding: 10px;
+  margin-bottom: 10px; 
+  display: inline-block;
+}
+/* SEARCH BAR */
+#myInput {
+  background-image: url('searchicon.png'); 
+  background-position: 10px 12px;
+  background-size: 20px 22px;
+  background-repeat: no-repeat; 
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+/* DROP DOWN MENU */
+
+.dropBox{
+  text-decoration: none;
+  font-size: 40px;
+  width: 100px;
+  color: red;
+}
+
+
+/* HOME */
+#searchContainer{
+  width: 50%;
+  margin-left: 10%;
+  overflow: hidden;
+}
+#searchBox{
+  height: 170px;
+  background-color: ;
+    text-align: center;
+}
+#searchSpace{
+height: 100px;
+}
+#searchHead{
+  text-align: left;
+  height: 150px;
+  font-size: 30px;
+  line-height: 40px;
+  font-family: sans-serif;
+    color: purple;
+}
+h2{
+  margin-top: 0;
+}
+h3{
+  padding: 10px;
+  line-height: 30px;
+  color: black;
+}
+
+/*HOME TABLE */
+#bottomTable{
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 20px;
+}
+.bottomTableRow{
+  display: table-row;
+  background-color: #00cec9;
+  color: white;
+
+}
+.bottomTableHead{
+  color: white;
+  font-size: 12px;
+}
+.bottomTableHeadImg{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("howlist.jpg");
+  background-size: 450px 350px;
+  width: 450px;
+  height: 350px;
+  transition: 1s;
+}
+.bottomTableHeadImg1{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("howhire.jpg");
+  background-size: 450px 350px;
+  width: 450px;
+  height: 350px;
+  transition: 1s;
+}
+.bottomTableHeadImg:hover{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("howlist.jpg");
+  background-size: 480px 380px;
+  width: 450px;
+  height: 350px;
+}
+.bottomTableHeadImg1:hover{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("howhire.jpg");
+  background-size: 480px 380px;
+  width: 450px;
+  height: 350px;
+}
+.bottomTableHeadImg2{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("aa.jpg");
+    background-repeat: no-repeat;
+  background-size: 450px 480px;
+  width: 450px;
+  height: 350px;
+  transition: 1s;
+}
+.bottomTableHeadImg2:hover{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("aa.jpg");
+  background-size: 470px 500px;
+  width: 450px;
+  height: 350px;
+}
+.bottomTableHeadImg3{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("listdetails.jpg");
+      background-repeat: no-repeat;
+  background-size: 450px 350px;
+  width: 450px;
+  height: 350px;
+  transition: 1s;
+}
+.bottomTableHeadImg3:hover{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("listdetails.jpg");
+      background-repeat: no-repeat;
+  background-size: 480px 380px;
+  width: 450px;
+  height: 350px;
+}
+.bottomTableHeadImg4{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("dispute.jpg");
+      background-repeat: no-repeat;
+  background-size: 450px 450px;
+  width: 450px;
+  height: 350px;
+  transition: 1s;
+}
+.bottomTableHeadImg4:hover{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("dispute.jpg");
+      background-repeat: no-repeat;
+  background-size: 460px 460px;
+  width: 450px;
+  height: 350px;
+}
+.bottomTableHeadImg5{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("collection.jpg");
+      background-repeat: no-repeat;
+  background-size: 450px 350px;
+  width: 450px;
+  height: 350px;
+  transition: 1s;
+}
+.bottomTableHeadImg5:hover{
+  display: table-cell;
+  border-style: solid;
+  overflow: hidden;
+  background-image: url("collection.jpg");
+      background-repeat: no-repeat;
+  background-size: 480px 380px;
+  width: 450px;
+  height: 350px;
+}
+
+.bottomTableHead{
+  display: table-cell;
+  width: 450px;
+  border-style: solid;
+  overflow: hidden;
+  padding-top: 0;
+  text-align: center;
+}
+
+
+
+/* INDEX CAR */
+#carIndexTable td{
+  background-color: ;
+  opacity: ;
+  width: 120px;
+  height: 30px;
+}
+#carIndexTable{
+
+}
+#carIndexTable tr{
+  background-color: ;
+}
+#headerHire{
+  background-color: white;
+  font-size: 40px;
+  padding: 40px;
+}
+
+
+/* SHOW CAR */
+.vehicleIndexHire1{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black 2px;
+  background-color: ;
+  text-align: center;
+  width: 900px;
+  height: 260px;
+  padding: 10px;
+  margin-bottom: 10px; 
+  display: inline-block;
+  background-color: white;
+  margin-top: 50px;
+}
+#carIndexContainer{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: white;
+}
+.vehicleIndexHire{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black 2px;
+  background-color: ;
+  text-align: center;
+  width: 700px;
+  height: 100%;
+  padding: 10px;
+  margin-bottom: 10px; 
+  display: inline-block;
+  background-color: white;
+  margin-top: 50px;
+}
+.buttonBox{
+  width: 100%;
+  height: 10px;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+#indexContainer{
+width: 100%;
+}
+.button a{
+  text-decoration: none;
+  background-color: #e67e22;
+  color: white;
+  margin-left: 0.2em;
+  padding: 0.2em;
+  width: 5;
+  text-align: center;
+  float: left;
+  font-style: none;
+  border: solid black 0.05em;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  float: left;
+  margin-right: 1000px;
+  margin-top: 5px;
+}
+
+
+
+
+
+/*NAV BAR!!*/
+.navbar{
+  width: 90%;
+  position: absolute;
+  top: 0px;
+  margin-top: 15px;
+}
+#nav1{
+  color: #535c68;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: black;
+}
+
+li {
+  float: right;
+  background-color: white;
+  color: black;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.hide{
+  background-color: #E78024;
+  color: #E78024;
+
+}
+
+li a {
+  display: block;
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  height: 20px;
+
+}
+li a:hover {
+  border-radius: 5px;
+  background-color: #bdc3c7;
+  opacity: 0.9;
+  height: 20px;
+}
+
+
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow: auto;
+  padding-bottom: 180px;
+  /* must be same height as the footer */
+}
+
+#footer {
+position:relative;
+ bottom:0;
+ left:0;
+ background-color: black;
+ width: 100%;
+ height: 30px;
+ color: white;
+ text-align: center;
+}
+
+/*FORM*/
+#formContainer{
+    width: 50%;
+    background-color: white;
+    margin-right: auto;
+    margin-left: auto;
+}
+#formTable{
+  display: table;
+  border-spacing: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formTableRow{
+ display: table-row;
+}
+.formTableCell{
+ display: table-cell;
+ display: inline-block;
+ width: 50%;
+}
+.formBox{
+  background-color: #dfe6e9;
+  border-width: 0;
+  height: 40px;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.formBoxBig{
+  background-color: #dfe6e9;
+  border-width: 0;
+  height: 80px;
+  width: 200px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+.backContainer{
+  width: 100%;
+  height: 1000px;
+  background-color: #01C5B1;
+  margin-left: 0;
+}
+.formButton{
+  background-color: #e74c3c;
+  height: 40px;
+  width: 150px;
+    border-radius: 5px;
+    color: white;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+.formButton:hover{
+  background-color: #e74c3c;
+  opacity: 0.9;
+  height: 40px;
+  width: 150px;
+    border-radius: 5px;
+    color: white;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+.backButton{
+  text-decoration: none;
+  height: 100px;
+  font-size: 30px;
+  float: left;
+}
+.header{
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+  background-color: #01C5B1;
+}
+h5{
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.radioButton{
+  background-color: red;
+  border-style: solid;
+  border-color: red;
+}
+
+
+
+/* AboutUs */
+#aboutUsContainer{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#carIndexTable1 {
+  background-color: ;
+  opacity: ;
+  width: 100%;
+}
+
+#carIndexTable1 tr{
+  background-color: ;
+  opacity: ;
+  height: 30px;
+}
+
+
+#carIndexContainer{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: white;
+}
+.vehicleIndexHire1{
+  border-style: solid;
+  border-width: 1px;
+  border-color: black 2px;
+  background-color: ;
+  text-align: center;
+  width: 1000px;
+  height: 290px;
+  padding: 10px;
+  margin-bottom: 10px; 
+  display: inline-block;
+  background-color: white;
+  margin-top: 50px;
+}
+
+
+
+
+
+/* USER CSS */
+#userContainer{
+  width: 40%;
+  background-color: white;
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding: 10px;
+
+}
+.userButtons{
+   text-decoration: none;
+  font-size: 12px;
+  background-color: #00cec9;
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.userButtons1{
+  text-decoration: none;
+  font-size: 12px;
+  background-color: #00cec9;
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.userButtons1:hover{
+  text-decoration: none;
+  font-size: 12px;
+  background-color: orange;
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.userButtons:hover{
+  text-decoration: none;
+  font-size: 12px;
+  background-color: orange;
+  float: left;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+#userTable{
+  margin-top: 7px;
+}
+#userDetails{
+  
+  margin-left: 7px;
+}
+#userBG{
+  width: 100%;
+}
+#showFlash{
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  color: red;
+}
+
+
+
+/* Histories */
+#historiesContainer{
+  width: 100%;
+  background-color: white;
+  padding-top: 20px;
+  margin-left: 0;
+  text-align: center;
+}
+#neww{
+  margin-left: auto;
+  margin-right: auto;
+}
+#neww tr{
+
+}
+
+.backButtons{
+   text-decoration: none;
+  font-size: 12px;
+  background-color: #00cec9;
+  float: left;
+  padding: 10px;
+  width: 100px;
+  border-radius: 5px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.bookButton{
+  float: left;
+  padding: 10px;
+  background-color: #01C5B1;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 2px;
+  width: 108px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.bookButton:hover{
+  float: left;
+  padding: 10px;
+  background-color: orange;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 2px;
+  width: 108px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+.Credit{
+  color: purple;
+  font-weight: bold;
+}
+
+
+.divv{
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+
+
+
+.topnav {
+  overflow: hidden;
+  width: 100%;
+  top: 0;
+    margin-top: 10px;
+}
+
+
+.topnav a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+  font-size: 17px;
+
+}
+
+
+.topnav .icon {
+  display: none;
+}
+
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover, .dropdown:hover .dropbtn {
+  opacity: 0.8;
+  color: white;
+}
+
+.dropdown-content a:hover {
+  opacity: 0.8;
+  background-color: #00cec9;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .topnav.responsive .dropdown {float: none;}
+  .topnav.responsive .dropdown-content {position: relative;}
+  .topnav.responsive .dropdown .dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+.ShowAlert{
+  background-color: red;
+}
+#nav2{
+  background-color: white;
+  color: #2d3436;
+  height: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.alarm{
+  color: red;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'profile', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="topContainer">
+         <div class="pictureCircle">
+    </div>
+    <div id="topSpread">
+    </div>
+    <div id="topDetails">
+      <div id="topDetailsTextBox">
+        <table id="textTable">
+          <tr>
+          <td><h1> Nathan Doore</h1></td>
+        </tr>
+        <tr>
+          <td><h3>Lutterworth, Leicester </h3></td>
+        </tr>
+        <tr>
+          <td><h4>Computer Science/Business Information Systems Graduate | </h4> </td> <td>Seeking a software development role</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+    <div class="pageContainer">
+      <div class="pageMargins">
+        
+      </div>
+     </div> 
+  </body>
+</html>
+
+#topSpread{
+  height: 300px;
+  width: 100%;
+  background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("background.jpg");
+}
+#topDetails{
+  height: 180px;
+  width: 100%;
+  background-color: #f1f2f6;
+}
+.pageContainer{
+  width: 100%;
+  height: 100%;
+  background-color: #dfe4ea;
+}
+.pageMargins{
+  width: 90%;
+  height: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #dfe4ea;
+}
+.pictureCircle{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    background-image: url("me.JPG");
+    background-size: 100%;
+    border: 3px solid white;
+    box-shadow: 3px 3px 3px #57606f;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 200px;
+}
+.topContainer{
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+#topDetailsTextBox{
+  font-family: sans-serif;
+  width: 70%;
+  height: 100%;
+  margin-left: 400px;
+}
+#textTable{
+}
+h1{
+  margin:0;
+  padding:0;
+  margin-top: 25px;
+}
+
+h3{
+  margin:0;
+  padding: 0;
+  color: #57606f;
+}

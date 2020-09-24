@@ -1,0 +1,84 @@
+<div id="formContainer">
+    <div id="formTable">
+
+            <div class="formTableRow">
+                <div class="formTableCell">
+                    <h4>Make & Model: </h4>
+                </div>
+                <div class="formTableCell">
+                    <%= @car.manufacturer %> |
+                        <%= @car.model %>
+                </div>
+            </div>
+
+            <div class="formTableRow">
+                <div class="formTableCell">
+                    <h4> Pick up area: </h4>
+                    <p> (Full details revealed once paid) </p>
+                </div>
+                <div class="formTableCell">
+                    <%= @car.postcode %>
+                </div>
+            </div>
+
+            <div class="formTableRow">
+                <div class="formTableRow">
+                    <div class="formTableCell">
+                        <h4>Cost per 24 hours: </h4>
+                    </div>
+                    <div class="formTableCell">
+                        £
+                        <%= @car.price %>
+                    </div>
+                </div>
+                <div class="formTableRow">
+
+                    <%= form_for @car do |f| %>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label "Date & Time of Hire" %> </h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.date_select :hirestart, :order => [:day, :month, :year] %>
+                                    <%= f.time_select :hirefinish, :order => [:hour] %>
+                            </div>
+                        </div>
+                        <div class="formTableRow">
+
+                            <div class="formTableCell">
+                                <h4><%= f.label "Date & Time of offhire" %> </h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.date_select :hirefinish, :order => [:day, :month, :year] %>
+                                    <%= f.time_select :hirefinish, :order => [ :hour] %>
+                            </div>
+                        </div>
+                        <p>
+
+                            <%= f.submit 'Hire Now', :class => 'formButton', :data => {:confirm => 'Payment page would show as the next page'} %>
+
+                        </p>
+                </div>
+                <% end %>
+
+            </div>
+    </div>
+
+    <%# THIS COPIES THE CAR ID INTO USER ID (SHOWS WHAT CAR THEY'RE RENTING)
+	THEN THE CAR RENTED ID = IT'S OWN ID %>
+        <% @user = User.find(session[:user_id])%>
+            <% @user.renter_id = @car.id%>
+                <% @user.rentcount = @user.rentcount + 1%>
+                    <% @user.save %>
+                    <% @car.status = "request" %>
+                        <% @car.rentcount = @car.rentcount + 1%>
+                            <% @car.renter_id = @car.id %>
+                                <% @car.save %>
+
+                                    <%#Histories %>
+
+                                        <% @history = History.create(date: Time.now) %>
+                                            <% @history.user_id = @user.id %>
+                                                <% @history.car_id = @car.id %>
+                                                    <% @history.save %>

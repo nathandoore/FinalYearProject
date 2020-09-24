@@ -1,0 +1,45 @@
+
+<div id="historiesContainer">
+<p id="notice"><%= notice %></p>
+<%= link_to 'Back', :back, class: "backButtons" %>
+<h1>Reviews </h1>
+
+<table>
+		<tr>
+			<th>Reviewer</th>
+			<th>Review</th>
+			<th>Stars</th>
+		</tr>
+		   <% @review.each do |review| %>
+			<tr>
+				<td><%= review.name %></td>
+				<td><%= review.review_text.truncate(30) %></td>
+
+				<!-- If statement for stars. Newvar = new variable -->
+				<% if review.no_of_stars == 1 %>
+					<% newvar = '*'%>
+					<% end %>
+				<% if review.no_of_stars == 2 %>
+					<% newvar = '**'%>
+					<% end %>
+				<% if review.no_of_stars == 3 %>
+					<% newvar = '***'%>
+					<% end %>
+				<% if review.no_of_stars == 4 %>
+					<% newvar = '****'%>
+					<% end %>
+				<% if review.no_of_stars == 5 %>
+					<% newvar = '*****'%>
+					<% end %>
+				<div class="stars">	
+					<td><%= newvar %></td>
+				</div>
+			</tr>
+			<%#= link_to 'Edit', edit_review_path(review.id) // COMMENTED OUT AS REVIEWS SHOULD NOT BE EDITED (AIRBNB STYLE )%>
+
+		<% end %>
+
+			
+	</table>
+</div>
+

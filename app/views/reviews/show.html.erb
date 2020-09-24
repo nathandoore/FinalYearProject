@@ -1,0 +1,49 @@
+<fieldset>
+<div class="centre-content"> 
+	
+
+	<p>
+	  <strong>Car:</strong>
+	  <%#= @review.car_id %>
+	  <%= @review.car.manufacturer %>
+	</p>
+
+	<p>
+	  <strong>Name:</strong>
+	  <%= @review.name %>
+	</p>
+
+	<p>
+	  <strong>Review text:</strong>
+	  <%= @review.review_text %>
+	</p>
+
+	<p>
+	  <strong>No of stars:</strong>
+	  <!-- If statement for stars. Newvar = new variable -->
+				<% if review.no_of_stars == 1 %>
+					<% newvar = '*'%>
+					<% end %>
+				<% if review.no_of_stars == 2 %>
+					<% newvar = '**'%>
+					<% end %>
+				<% if review.no_of_stars == 3 %>
+					<% newvar = '***'%>
+					<% end %>
+				<% if review.no_of_stars == 4 %>
+					<% newvar = '****'%>
+					<% end %>
+				<% if review.no_of_stars == 5 %>
+					<% newvar = '*****'%>
+					<% end %>
+				<div class="stars">	
+					<td><%= newvar %></td>
+				</div>
+	</p>
+
+	<%#= link_to 'Edit', edit_review_path(@review) %> 
+	<%#= link_to 'Back', reviews_path %>
+	<%= link_to 'Back', :back %>
+
+</div>
+</feildset>

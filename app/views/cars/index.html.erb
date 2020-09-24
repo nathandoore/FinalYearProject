@@ -1,0 +1,123 @@
+<div id="indexContainer" %>
+    <div id="carIndexContainer">
+        <div id="headerHire">
+            <h2> Cars available </h2>
+        </div>
+        <% @car.each do |cars| %>
+            <% if cars.id == 1 %>
+                <% else %>
+                    <% if cars.renter_id == 1%>
+                        <% if cars.status == "false" %>
+                            <% else %>
+                                <div class="vehicleIndexHire">
+                                    <table id="carIndexTable">
+                                        <tr>
+                                            <td rowspan="4">
+                                                <%= image_tag cars.img_url.url || 'm4.jpg', :size => "270x210" %>
+                                            </td>
+                                            <td>
+                                                <%= image_tag 'Car.png', :size => "50x50" %>
+                                            </td>
+
+                                            <td>
+                                                <%= image_tag 'House.png', :size => "50x50" %>
+                                            </td>
+                                            <td>
+                                                <%= image_tag 'Fuel.png', :size => "50x50" %>
+                                            </td>
+
+                                            <td>
+                                                <%= image_tag 'Gears.png', :size => "50x50" %>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <%= cars.manufacturer %>
+                                                        <%= cars.model %>
+                                                </p>
+                                            </td>
+
+                                            <td>
+                                                <p>
+                                                    <%= cars.postcode %>
+                                                </p>
+                                            </td>
+
+                                            <td>
+                                                <p>
+                                                    <%= cars.fuel %>
+                                                </p>
+                                            </td>
+
+                                            <td>
+                                                <p>
+                                                    <%= cars.transmission %>
+                                                </p>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <%= image_tag 'Engine.png', :size => "50x50" %>
+                                            </td>
+
+                                            <td>
+                                                <%= image_tag 'Year.png', :size => "50x50" %>
+                                            </td>
+
+                                            <td>
+                                                <%= image_tag 'Price.png', :size => "50x50" %>
+                                            </td>
+
+                                            <td>
+                                                <%= image_tag 'Review.png', :size => "50x50" %>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <%= cars.engine %> Litres </p>
+                                            </td>
+
+                                            <td>
+                                                <p>
+                                                    <%= cars.year %>
+                                                </p>
+                                            </td>
+
+                                            <td>
+                                                <p>24hr Price: £
+                                                    <%= cars.price %>
+                                                </p>
+                                            </td>
+
+                                            <td>
+                                                <p>
+                                                    <%= link_to 'See Reviews',
+                     {controller: 'reviews', action: 'displays', id: cars.id } %>
+                                                </p>
+                                            </td>
+
+                                        </tr>
+                                        <td>
+                                            <% if logged_in?%>
+                                                <%= link_to 'Book Now', car_path(cars), :class => 'bookButton', :onclick => 'PopUp()'%>
+                                                    <% else %>
+                                                        <%= link_to 'Book Now', signup_path, :class => 'bookButton' %>
+                                                            <% end %>
+
+                                        </td>
+
+                                    </table>
+
+                                </div>
+                                <% end %>
+                                    <% end %>
+                                        <% end %>
+                                            <% end %>
+                                                <%= will_paginate @car %>
+    </div>
+</div>

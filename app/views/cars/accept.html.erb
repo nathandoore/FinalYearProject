@@ -1,0 +1,148 @@
+<div id="indexContainer" %>
+    <div id="carIndexContainer">
+        <div id="headerHire">
+            <%= link_to 'Back', :back, class: "backButtons" %>
+                <h3> Accepted Rental </h3>
+        </div>
+
+        <% user = User.find(session[:user_id])%>
+
+
+
+
+
+                    <div class="vehicleIndexHire1">
+                        <table id="carIndexTable1">
+                            <tr>
+                                <td rowspan="4">
+                                    <%= image_tag @car.img_url.url || 'm4.jpg', :size => "270x210" %>
+                                </td>
+                                <td>
+                                    <%= image_tag 'Car.png', :size => "50x50" %>
+                                </td>
+
+                                <td>
+                                    <%= image_tag 'House.png', :size => "50x50" %>
+                                </td>
+                                <td>
+                                    <%= image_tag 'Fuel.png', :size => "50x50" %>
+                                </td>
+
+                                <td>
+                                    <%= image_tag 'Colour.png', :size => "50x50" %>
+                                </td>
+                                <td>
+                                    <b>Rent start date </b>
+                                </td>
+                                <td>
+                                    <b>Collection address: </b>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <%= @car.manufacturer %>
+                                            <%= @car.model %>
+                                    </p>
+                                </td>
+
+                                <td>
+                                    <p>
+                                        <%= @car.postcode %>
+                                    </p>
+                                </td>
+
+                                <td>
+                                    <p>
+                                        <%= @car.fuel %>
+                                    </p>
+                                </td>
+
+                                <td>
+                                    <p>
+                                        <%= @car.colour %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= @car.hirestart.strftime("%I:%M  |  %F") %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= @car.pickup %>
+                                            <%= @car.postcode %>
+                                    </p>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <%= image_tag 'Engine.png', :size => "50x50" %>
+                                </td>
+
+                                <td>
+                                    <%= image_tag 'Year.png', :size => "50x50" %>
+                                </td>
+
+                                <td>
+                                    <%= image_tag 'Price.png', :size => "50x50" %>
+                                </td>
+
+                                <td>
+                                    <%= image_tag 'Review.png', :size => "50x50" %>
+                                </td>
+                                <td><b>Rent end date </b>
+                                </td>
+                                <td>
+                                    <b> Lister's contact info</b>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>
+                                        <%= @car.engine %> Litres </p>
+                                </td>
+
+                                <td>
+                                    <p>
+                                        <%= @car.year %>
+                                    </p>
+                                </td>
+
+                                <td>
+                                    <p>24hr Price: £
+                                        <%= @car.price %>
+                                    </p>
+                                </td>
+
+                                <td>
+                                    <p>Review: </p>
+                                </td>
+                                <td>
+                                    <p>
+                                        <%= @car.hirefinish.strftime("%I:%M  |  %F") %>
+                                    </p>
+                                </td>
+                                <td>
+                                    <% @user = User.find(@car.user_id) %>
+                                        <%= @user.email %> |
+                                            0<%= @user.mobile %>
+                                </td>
+
+                            </tr>
+                            <td>
+
+                            </td>
+
+                        </table>
+                        
+                    </div>
+
+        
+              
+
+    </div>
+</div>

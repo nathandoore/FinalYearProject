@@ -1,0 +1,119 @@
+<div class="backContainer">
+
+    <%= form_for(@user) do |f| %>
+        <% if @user.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+                <ul>
+                    <% @user.errors.full_messages.each do |message| %>
+                        <li>
+                            <%= message %>
+                        </li>
+                        <% end %>
+                </ul>
+            </div>
+            <% end %>
+
+                <div id="formContainer">
+                    <div id="formTable">
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :username %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.text_field :username, {:class => "formBox"} %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :email %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.text_field :email, {:class => "formBox"} %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :firstname %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.text_field :firstname, {:class => "formBox"} %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :lastname %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.text_field :lastname, {:class => "formBox"} %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :firstline, 'First line of home address' %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.text_area :firstline, {:class => "formBox"} %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :postcode, 'Post code for home address' %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.text_field :postcode, {:class => "formBox"} %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :dob, 'Date of birth' %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.date_select :dob, start_year: 1920, end_year: 2003, :order => [:day, :month, :year] %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :mobile %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.text_field :mobile, {:class => "formBox"} %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <h4><%= f.label :password %></h4>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.password_field :password, {:class => "formBox"} %>
+                            </div>
+                        </div>
+
+                        <div class="formTableRow">
+                            <div class="formTableCell">
+                                <%= f.label :contactmethod, 'Please tick here if you accept our terms and conditions on exchange of customer information', :value => 'yes' %>
+                            </div>
+                            <div class="formTableCell">
+                                <%= f.radio_button :terms, 'yes', class: "radioButton" %>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <%= f.submit :class => 'formButton' %>
+
+                        </div>
+                        <% end %>
+
+                    </div>
+                </div>
+
+</div>
